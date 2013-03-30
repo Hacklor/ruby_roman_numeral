@@ -35,6 +35,11 @@ class RomanNumeralTest < Test::Unit::TestCase
     assert_equal "CM", @numerals.to_roman(900)
   end
 
+  def test_complex_to_roman
+    assert_equal "CMXLIV", @numerals.to_roman(944)
+    assert_equal "MCMXCVI", @numerals.to_roman(1996)
+  end
+
   def test_empty_to_decimal
     assert_equal 0, @numerals.to_decimal("")
   end
@@ -58,7 +63,16 @@ class RomanNumeralTest < Test::Unit::TestCase
   end
 
   def test_subtractions_to_decimal
-    puts "Subtractions"
     assert_equal 4, @numerals.to_decimal("IV")
+    assert_equal 9, @numerals.to_decimal("IX")
+    assert_equal 40, @numerals.to_decimal("XL")
+    assert_equal 90, @numerals.to_decimal("XC")
+    assert_equal 400, @numerals.to_decimal("CD")
+    assert_equal 900, @numerals.to_decimal("CM")
+  end
+
+  def test_complex_to_decimal
+    assert_equal 944, @numerals.to_decimal("CMXLIV")
+    assert_equal 1996, @numerals.to_decimal("MCMXCVI")
   end
 end
