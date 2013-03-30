@@ -31,8 +31,8 @@ class RomanNumeral
     return 0 if roman == ""
 
     @romans.each do |key, value|
-      if roman[0] == value
-        return key + to_decimal(roman[1..-1])
+      if roman.start_with? value
+        return key + to_decimal(roman.sub(value, ''))
       end
     end
   end

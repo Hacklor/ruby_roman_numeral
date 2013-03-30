@@ -56,4 +56,9 @@ class RomanNumeralTest < Test::Unit::TestCase
     assert_equal 15, @numerals.to_decimal("XV")
     assert_equal 1050, @numerals.to_decimal("ML")
   end
+
+  def test_subtractions_to_decimal
+    puts "Subtractions"
+    assert_equal 4, @numerals.to_decimal("IV")
+  end
 end
