@@ -6,16 +6,13 @@ class RomanNumeralTest < Test::Unit::TestCase
     assert_equal "", RomanNumeral.new.to_roman(0)
   end
 
-  def test_one
+  def test_single_numeral
     assert_equal "I", RomanNumeral.new.to_roman(1)
+    assert_equal "V", RomanNumeral.new.to_roman(5)
   end
 
   def test_two
     assert_equal "II", RomanNumeral.new.to_roman(2)
-  end
-
-  def test_five
-    assert_equal "V", RomanNumeral.new.to_roman(5)
   end
 
   def test_six
