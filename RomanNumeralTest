@@ -9,6 +9,11 @@ class RomanNumeralTest < Test::Unit::TestCase
   def test_single_numeral
     assert_equal "I", RomanNumeral.new.to_roman(1)
     assert_equal "V", RomanNumeral.new.to_roman(5)
+    assert_equal "X", RomanNumeral.new.to_roman(10)
+    assert_equal "L", RomanNumeral.new.to_roman(50)
+    assert_equal "C", RomanNumeral.new.to_roman(100)
+    assert_equal "D", RomanNumeral.new.to_roman(500)
+    assert_equal "M", RomanNumeral.new.to_roman(1000)
   end
 
   def test_two
@@ -22,7 +27,15 @@ end
 
 class RomanNumeral
   def initialize
-    @romans = {5 => "V", 1 => "I"}
+    @romans = {
+        1000 => "M",
+        500 => "D",
+        100 => "C",
+        50 => "L",
+        10 => "X",
+        5 => "V",
+        1 => "I"
+    }
   end
 
   def to_roman(number)
