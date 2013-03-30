@@ -48,4 +48,8 @@ class RomanNumeralTest < Test::Unit::TestCase
     assert_equal 500, @numerals.to_decimal("D")
     assert_equal 1000, @numerals.to_decimal("M")
   end
+
+  def test_additions_to_decimal
+    assert_equal 2, @numerals.to_decimal("II")
+  end
 end
