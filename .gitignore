@@ -1,1 +1,4 @@
 .idea
+scopes
+*.xml
+*.iml
