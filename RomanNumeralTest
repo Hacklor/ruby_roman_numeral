@@ -17,6 +17,10 @@ class RomanNumeralTest < Test::Unit::TestCase
   def test_five
     assert_equal "V", RomanNumeral.new.to_roman(5)
   end
+
+  def test_six
+    assert_equal "VI", RomanNumeral.new.to_roman(6)
+  end
 end
 
 class RomanNumeral
@@ -28,12 +32,9 @@ class RomanNumeral
     return "" if number == 0
 
     @romans.each do |key, value|
-      if key == number
-        number = number - key
-        return value
+      if number >= key
+        return value + to_roman(number - key)
       end
     end
-
-    "I" + to_roman(number - 1)
   end
 end
