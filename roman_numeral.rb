@@ -29,5 +29,11 @@ class RomanNumeral
 
   def to_decimal(roman)
     return 0 if roman == ""
+
+    @romans.each do |key, value|
+      if roman == value
+        return key
+      end
+    end
   end
 end

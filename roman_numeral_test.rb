@@ -38,4 +38,14 @@ class RomanNumeralTest < Test::Unit::TestCase
   def test_empty_to_decimal
     assert_equal 0, @numerals.to_decimal("")
   end
+
+  def test_single_numeral_to_decimal
+    assert_equal 1, @numerals.to_decimal("I")
+    assert_equal 5, @numerals.to_decimal("V")
+    assert_equal 10, @numerals.to_decimal("X")
+    assert_equal 50, @numerals.to_decimal("L")
+    assert_equal 100, @numerals.to_decimal("C")
+    assert_equal 500, @numerals.to_decimal("D")
+    assert_equal 1000, @numerals.to_decimal("M")
+  end
 end
