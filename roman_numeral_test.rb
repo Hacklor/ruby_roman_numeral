@@ -1,4 +1,5 @@
 require "test/unit"
+require_relative "roman_numeral"
 
 class RomanNumeralTest < Test::Unit::TestCase
 
