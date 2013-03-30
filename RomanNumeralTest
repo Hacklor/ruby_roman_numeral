@@ -2,16 +2,21 @@ require "test/unit"
 
 class RomanNumeralTest < Test::Unit::TestCase
   def test_zero
-    assert_equal("", to_roman(0))
+    assert_equal "", to_roman(0)
   end
 
   def test_one
-    assert_equal("I", to_roman(1))
+    assert_equal "I", to_roman(1)
+  end
+
+  def test_two
+    assert_equal "II", to_roman(2)
   end
 end
 
 def to_roman(number)
   return "" if number == 0
+  return "I" if number == 1
 
-  "I"
+  "I" + to_roman(number - 1)
 end
