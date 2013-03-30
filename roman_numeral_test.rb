@@ -51,5 +51,9 @@ class RomanNumeralTest < Test::Unit::TestCase
 
   def test_additions_to_decimal
     assert_equal 2, @numerals.to_decimal("II")
+    assert_equal 3, @numerals.to_decimal("III")
+    assert_equal 6, @numerals.to_decimal("VI")
+    assert_equal 15, @numerals.to_decimal("XV")
+    assert_equal 1050, @numerals.to_decimal("ML")
   end
 end
