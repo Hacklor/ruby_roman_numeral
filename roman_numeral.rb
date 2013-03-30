@@ -26,4 +26,8 @@ class RomanNumeral
       end
     end
   end
+
+  def to_decimal(roman)
+    return 0 if roman == ""
+  end
 end
